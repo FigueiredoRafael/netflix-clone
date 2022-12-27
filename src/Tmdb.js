@@ -75,4 +75,13 @@ export default {
       },
     ];
   },
+  getMovieInfo: async (movieId, type) => {
+    let info = {};
+
+    if (movieId) {
+      info = await handleFetch(`/${type}/${movieId}?api_key=${API_KEY}`);
+    }
+
+    return info;
+  },
 };
